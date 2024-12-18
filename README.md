@@ -84,7 +84,7 @@ spark-submit \
 +-------+------------+------------+----------------+-----------------------+-------+----------+------+-------+--------+-------+----------+----------+----------+---+
 ```
 
-Unit tests for UDF functions are implemented in src/test/scala 
+**Unit tests for UDF functions are implemented in src/test/scala**
 
 
 ## Dependencies
