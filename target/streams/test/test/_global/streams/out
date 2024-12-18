@@ -1,0 +1,45 @@
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(SparkJobTest, org.scalatest.tools.Framework$$anon$1@6f00336b, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mSparkJobTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31mSparkJobTest *** ABORTED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  java.lang.IllegalAccessError: class org.apache.spark.storage.StorageUtils$ (in unnamed module @0x7f2319a5) cannot access class sun.nio.ch.DirectBuffer (in module java.base) because module java.base does not export sun.nio.ch to unnamed module @0x7f2319a5[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.storage.StorageUtils$.<init>(StorageUtils.scala:213)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.storage.StorageUtils$.<clinit>(StorageUtils.scala)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.storage.BlockManagerMasterEndpoint.<init>(BlockManagerMasterEndpoint.scala:121)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.SparkEnv$.$anonfun$create$9(SparkEnv.scala:353)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.SparkEnv$.registerOrLookupEndpoint$1(SparkEnv.scala:290)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.SparkEnv$.create(SparkEnv.scala:339)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.SparkEnv$.createDriverEnv(SparkEnv.scala:194)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.SparkContext.createSparkEnv(SparkContext.scala:284)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.SparkContext.<init>(SparkContext.scala:478)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.SparkContext$.getOrCreate(SparkContext.scala:2883)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
+[0m[[0m[31merror[0m] [0m[0mTest suite SparkJobTest failed with java.lang.IllegalAccessError: class org.apache.spark.storage.StorageUtils$ (in unnamed module @0x7f2319a5) cannot access class sun.nio.ch.DirectBuffer (in module java.base) because module java.base does not export sun.nio.ch to unnamed module @0x7f2319a5.[0m
+[0m[[0m[31merror[0m] [0m[0mThis may be due to the ClassLoaderLayeringStrategy (ScalaLibrary) used by your task.[0m
+[0m[[0m[31merror[0m] [0m[0mTo improve performance and reduce memory, sbt attempts to cache the class loaders used to load the project dependencies.[0m
+[0m[[0m[31merror[0m] [0m[0mThe project class files are loaded in a separate class loader that is created for each test run.[0m
+[0m[[0m[31merror[0m] [0m[0mThe test class loader accesses the project dependency classes using the cached project dependency classloader.[0m
+[0m[[0m[31merror[0m] [0m[0mWith this approach, class loading may fail under the following conditions:[0m
+[0m[[0m[31merror[0m] [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m * Dependencies use reflection to access classes in your project's classpath.[0m
+[0m[[0m[31merror[0m] [0m[0m   Java serialization/deserialization may cause this.[0m
+[0m[[0m[31merror[0m] [0m[0m * An open package is accessed across layers. If the project's classes access or extend[0m
+[0m[[0m[31merror[0m] [0m[0m   jvm package private classes defined in a project dependency, it may cause an IllegalAccessError[0m
+[0m[[0m[31merror[0m] [0m[0m   because the jvm enforces package private at the classloader level.[0m
+[0m[[0m[31merror[0m] [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0mThese issues, along with others that were not enumerated above, may be resolved by changing the class loader layering strategy.[0m
+[0m[[0m[31merror[0m] [0m[0mThe Flat and ScalaLibrary strategies bundle the full project classpath in the same class loader.[0m
+[0m[[0m[31merror[0m] [0m[0mTo use one of these strategies, set the ClassLoaderLayeringStrategy key[0m
+[0m[[0m[31merror[0m] [0m[0min your configuration, for example:[0m
+[0m[[0m[31merror[0m] [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0mset sparkhw / Test / classLoaderLayeringStrategy := ClassLoaderLayeringStrategy.ScalaLibrary[0m
+[0m[[0m[31merror[0m] [0m[0mset sparkhw / Test / classLoaderLayeringStrategy := ClassLoaderLayeringStrategy.Flat[0m
+[0m[[0m[31merror[0m] [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0mSee ClassLoaderLayeringStrategy.scala for the full list of options.[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 2 seconds, 173 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 0, aborted 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 0, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m*** 1 SUITE ABORTED ***[0m[0m
+[0m[[0m[31merror[0m] [0m[0mError during tests:[0m
+[0m[[0m[31merror[0m] [0m[0m	SparkJobTest[0m
+[0m[[0m[31merror[0m] [0m[0m(Test / [31mtest[0m) sbt.TestsFailedException: Tests unsuccessful[0m

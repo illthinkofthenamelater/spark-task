@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/home/anel/Documents/SparkHW/src/test/scala/testing.scala:70:5: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m    test("Test geohashUDF using sample data") {[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/anel/Documents/SparkHW/src/test/scala/testing.scala:101:1: Unmatched closing brace '}' ignored here[0m
+[0m[[0m[31merror[0m] [0m[0m}[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

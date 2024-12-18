@@ -15,7 +15,8 @@ libraryDependencies ++= Seq(
   "org.typelevel" %% "cats-core" % "2.12.0",
   //"com.softwaremill.sttp.client3" %% "core" % "3.9.0",
   //"com.softwaremill.sttp.client3" %% "circe" % "3.9.0",
-  "ch.hsr" % "geohash" % "1.4.0", //  "org.scalatest" %% "scalatest" % "3.2.17" % Test
+  "ch.hsr" % "geohash" % "1.4.0", 
+  "org.scalatest" %% "scalatest" % "3.2.17" % Test //  "org.scalatest" %% "scalatest" % "3.2.17" % Test
 )
 
 
